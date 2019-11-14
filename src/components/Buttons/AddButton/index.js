@@ -3,10 +3,10 @@ import React from 'react';
 import { Container } from './styles';
 import AddIcon from '../../Icons/Plus';
 
-export default function AddButton({ style, onClick }) {
+export default function AddButton({ style, onClick, icon = {} }) {
   return (
     <Container style={style} onClick={onClick}>
-      <AddIcon />
+      <AddIcon style={icon.style} />
     </Container>
   );
 }
