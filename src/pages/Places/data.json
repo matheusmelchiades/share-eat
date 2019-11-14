@@ -1,0 +1,12 @@
+{
+  "count": 7,
+  "rows": [
+    { "id": 1, "name": "Silva Lanches", "plates": 5 },
+    { "id": 2, "name": "Z café", "plates": 3 },
+    { "id": 3, "name": "Canal Café - PUCRS", "plates": 2 },
+    { "id": 4, "name": "Palatu's - PUCRS", "plates": 3 },
+    { "id": 5, "name": "Ponto Onze - PUCRS", "plates": 5 },
+    { "id": 6, "name": "Espaço 32 Restaurante e Café", "plates": 4 },
+    { "id": 7, "name": "Intervalo 50 - PUCRS", "plates": 2 }
+  ]
+}
