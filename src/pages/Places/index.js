@@ -1,19 +1,10 @@
 import React, { useState } from 'react';
 
-import {
-  Container,
-  Title,
-  SubTitle,
-  Content,
-  PlaceRow,
-  PlaceTitle,
-  PlatesLength,
-  PlaceCard,
-  PlatesButton,
-} from './styles';
+import { Container, Content, PlaceRow, PlaceTitle, PlatesLength, PlaceCard, PlatesButton } from './styles';
 
-import data from './data.json';
+import Header from '../../components/Header';
 import AddButton from '../../components/Buttons/AddButton';
+import data from './data.json';
 
 export default function Places({ history }) {
   const [placesLength] = useState(data.count);
@@ -25,8 +16,7 @@ export default function Places({ history }) {
 
   return (
     <Container>
-      <Title>Lugares</Title>
-      <SubTitle>{placesLength} lugares cadastrados</SubTitle>
+      <Header title="Lugares" subTitle={`${placesLength} lugares cadastrados`} />
 
       <Content>
         {places.map(place => (
@@ -37,7 +27,7 @@ export default function Places({ history }) {
             </PlaceCard>
 
             <PlatesButton>
-              <AddButton />
+              <AddButton icon={{ style: { fill: '#FFFFFF98' } }} />
             </PlatesButton>
           </PlaceRow>
         ))}

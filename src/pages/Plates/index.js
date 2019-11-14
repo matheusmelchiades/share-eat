@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 
 import data from './data.json';
-import { Container, Header, PlateRow, PlateCard, PlateName, PlatePrice, PlateDescription } from './styles.js';
-import { Title, SubTitle } from '../Places/styles.js';
+import { Container, PlateRow, PlateCard, PlateName, PlatePrice, PlateDescription } from './styles.js';
 
+import Header from '../../components/Header';
 import FloatingButton from '../../components/Buttons/AddFloating';
 
 export default function Plates({ history, location }) {
@@ -23,10 +23,11 @@ export default function Plates({ history, location }) {
 
   return (
     <Container>
-      <Header>
-        <Title>{location.state.name || ''}</Title>
-        <SubTitle>{plates.length || ''} pratos</SubTitle>
-      </Header>
+      <Header
+        title={location.state && location.state.name ? location.state.name : ''}
+        subTitle={`${plates.length || ''} pratos`}
+      />
+
       {plates.map(plate => (
         <PlateRow key={plate.id}>
           <PlateCard>
