@@ -23,7 +23,6 @@ export const Content = styled.div`
 
 export const PlaceRow = styled.div`
   display: flex;
-  justify-content: space-between;
   width: 100%;
 
   @media (min-width: ${MEDIA_PIXEL}px) {

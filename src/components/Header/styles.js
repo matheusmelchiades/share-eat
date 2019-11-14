@@ -22,7 +22,6 @@ export const Title = styled.h2`
 
 export const SubTitle = styled.p`
   margin-top: 5px;
-
   color: #ffffff;
   opacity: 0.7;
   letter-spacing: 0;

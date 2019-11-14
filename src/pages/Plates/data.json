@@ -8,7 +8,7 @@
   },
   {
     "id": 2,
-    "name": "Arroz, feijão, bife e batata frita",
+    "name": "Arroz e feijão",
     "description": "voluptate consequat aute eu nulla sint adipisicing non est dolor proident ipsum officia id veniam adipisicing mollit cupidatat veniam laboris officia laboris dolore id consectetur nostrud esse cupidatat laboris enim fugiat cillum dolor mollit sit consectetur consectetur labore nostrud qui ex laborum irure ea excepteur mollit minim labore occaecat voluptate",
     "price": 76.72,
     "placeId": 1
@@ -57,7 +57,7 @@
   },
   {
     "id": 9,
-    "name": "Cachaça artesanal de qualidade",
+    "name": "Cachaça artesanal",
     "description": "fugiat sunt labore occaecat officia exercitation culpa laborum esse aliquip anim reprehenderit cillum nisi aliqua nulla fugiat ad magna ea ex pariatur amet aute in sint ea nulla culpa adipisicing sint laborum est fugiat consectetur mollit do culpa dolore qui deserunt velit commodo sit minim sint amet deserunt dolore ex",
     "price": 119.27,
     "placeId": 7
@@ -106,7 +106,7 @@
   },
   {
     "id": 16,
-    "name": "Pizza assado no forno à lenha",
+    "name": "Pizza assado no forno",
     "description": "Lorem exercitation officia voluptate sunt sint anim est est consequat dolor aute irure non duis occaecat exercitation et ex fugiat aliqua ad ut tempor eu proident est eu minim ex irure labore pariatur Lorem laborum non proident in adipisicing qui nisi elit tempor excepteur velit ut non magna id ullamco",
     "price": 237.96,
     "placeId": 4
