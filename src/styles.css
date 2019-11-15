@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Poppins&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Nunito+Sans&display=swap');
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
 
 * {
   margin: 0;
@@ -15,10 +16,10 @@ body,
 }
 
 body {
-  background: #292929 0% 0% no-repeat padding-box;
   background-size: cover;
   opacity: 1;
   -webkit-font-smoothing: antialiased !important;
+  background: #292929;
 }
 
 body,

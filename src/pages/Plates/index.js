@@ -29,6 +29,7 @@ export default function Plates({ history, location }) {
   }
 
   useEffect(() => {
+    history.buttonBack = true;
     const placeParam = location.state;
 
     if (placeParam && placeParam.id) {
@@ -60,7 +61,7 @@ export default function Plates({ history, location }) {
 
       <FloatingButton
         onClick={() => {
-          history.push('forms/plate');
+          history.push('forms/plates', location.state);
         }}
       />
     </Container>

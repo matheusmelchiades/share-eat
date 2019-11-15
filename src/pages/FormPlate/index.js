@@ -3,8 +3,10 @@ import React, { useState } from 'react';
 import { Container, FormGroup, FormItem, TitleInput, Input, Description, FormSubmit, TextArea } from './styles';
 
 import Header from '../../components/Header';
+import api from '../../services/api';
 
-export default function FormPlate({ history }) {
+export default function FormPlate({ history, location: { state = {} } }) {
+  const [title] = useState(state.name || '');
   const [form, setForm] = useState({
     name: '',
     price: '',
@@ -15,15 +17,25 @@ export default function FormPlate({ history }) {
     setForm({ ...form, [field]: value });
   };
 
-  const handlerSubmit = e => {
+  async function fetchNewPlate() {
+    try {
+      const response = await api.post('plate', { ...form, placeId: state.id });
+
+      if (response.data.id) {
+        history.push('/places');
+      }
+    } catch (err) {}
+  }
+
+  const handlerSubmit = async e => {
     e.preventDefault();
-    console.log(form);
-    history.push('/places');
+
+    await fetchNewPlate();
   };
 
   return (
     <Container>
-      <Header title="SilvaLanches" />
+      <Header title={title} />
       <FormGroup onSubmit={handlerSubmit}>
         <FormItem>
           <TitleInput>Nome do prato</TitleInput>

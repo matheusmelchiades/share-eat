@@ -1,15 +1,47 @@
-import React from 'react';
-import { Container, Header, HeaderTitle } from './styles';
+import React, { useEffect, useState } from 'react';
+import { Container, Header, HeaderTitle, IconBack, ButtonBack } from './styles';
 
 import HeaderTitleSVG from '../../assets/header_title.svg';
 
-export default function Layout(props) {
+import { withRouter } from 'react-router-dom';
+
+const MAP_ACTIONS_BY_PATH = {
+  '/places': {
+    showButtonBack: false,
+    background: true,
+  },
+  '/plates': {
+    showButtonBack: true,
+    background: true,
+  },
+  '/forms/plates': {
+    showButtonBack: true,
+    background: false,
+  },
+};
+
+function Layout({ history, location: { pathname = '' }, children }) {
+  const [showButtonBack, setShowButtonBack] = useState(false);
+
+  useEffect(() => {
+    setShowButtonBack(MAP_ACTIONS_BY_PATH[pathname].showButtonBack);
+  }, [pathname]);
+
+  function handleButtonBack() {
+    if (showButtonBack) {
+      history.goBack();
+    }
+  }
+
   return (
-    <Container id="Layout">
+    <Container id="Layout" background={MAP_ACTIONS_BY_PATH[pathname].background}>
       <Header>
+        <ButtonBack onClick={handleButtonBack}>{showButtonBack && <IconBack>keyboard_arrow_left</IconBack>}</ButtonBack>
         <HeaderTitle src={HeaderTitleSVG} />
       </Header>
-      {props.children}
+      {children}
     </Container>
   );
 }
+
+export default withRouter(Layout);

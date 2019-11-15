@@ -70,4 +70,5 @@ export const PlatesButton = styled.div`
   justify-content: center;
   align-items: center;
   padding: 20px;
+  margin-top: 12px;
 `;

@@ -3,17 +3,11 @@ import styled from 'styled-components';
 const MEDIA_PIXEL = 769;
 
 export const Container = styled.div`
-  body:not(&) {
-    background: #464646;
-  }
-
-  #Layout:not(&) {
-    background-image: none;
-  }
-
-  @media (min-width: ${MEDIA_PIXEL}px) {
-    padding: 0 31%;
-  }
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding-top: 20px;
 `;
 
 export const FormGroup = styled.form`
@@ -25,6 +19,10 @@ export const FormGroup = styled.form`
   align-items: flex-start;
 
   padding: 10px;
+  
+  @media (min-width: ${MEDIA_PIXEL}px) {
+    padding: 0 31%;
+  }
 `;
 
 export const FormItem = styled.div`

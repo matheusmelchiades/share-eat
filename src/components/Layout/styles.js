@@ -5,7 +5,8 @@ import ImageBackgroundSVG from '../../assets/background_style.svg';
 const MEDIA_PIXEL = 769;
 
 export const Container = styled.div`
-  background-image: url(${ImageBackgroundSVG});
+  background: ${({ background }) => (background ? '#292929' : '#464646')};
+  background-image: url(${({ background }) => (background ? ImageBackgroundSVG : '')});
   background-repeat: no-repeat;
   background-position: right top;
   height: 100vh;
@@ -18,11 +19,33 @@ export const Container = styled.div`
 `;
 
 export const Header = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+
+  @media (min-width: ${MEDIA_PIXEL}px) {
+    padding: 0 31%;
+  }
 `;
 
 export const HeaderTitle = styled.img`
   margin: 15px 0px;
+  justify-self: center;
+`;
+
+export const ButtonBack = styled.div`
+  margin: 15px 0px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  cursor: pointer;
+
+  @media (max-width: ${MEDIA_PIXEL}px) {
+    margin: 15px 10px;
+  }
+`;
+
+export const IconBack = styled.i.attrs({
+  className: 'material-icons',
+})`
+  color: #fff;
 `;

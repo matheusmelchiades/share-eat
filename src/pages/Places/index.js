@@ -48,7 +48,12 @@ export default function Places({ history }) {
             </PlaceCard>
 
             <PlatesButton>
-              <AddButton icon={{ style: { fill: '#FFFFFF98' } }} />
+              <AddButton
+                icon={{ style: { fill: '#FFFFFF98' } }}
+                onClick={() => {
+                  history.push('forms/plates', place);
+                }}
+              />
             </PlatesButton>
           </PlaceRow>
         ))}
