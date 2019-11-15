@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 
-import data from './data.json';
 import {
   Container,
   Content,
@@ -14,17 +13,26 @@ import {
 
 import Header from '../../components/Header';
 import FloatingButton from '../../components/Buttons/AddFloating';
+import api from '../../services/api.js';
 
 export default function Plates({ history, location }) {
   const [plates, setPlates] = useState([]);
+
+  async function fetchPlates(placeId) {
+    try {
+      const { data } = await api.get(`/place/${placeId}/plate`);
+
+      if (data) {
+        setPlates(data.rows);
+      }
+    } catch (err) {}
+  }
 
   useEffect(() => {
     const placeParam = location.state;
 
     if (placeParam && placeParam.id) {
-      const platesFetched = data.filter(plate => plate.placeId === placeParam.id);
-
-      setPlates(platesFetched);
+      fetchPlates(placeParam.id);
     } else {
       history.push('places');
     }
@@ -34,7 +42,7 @@ export default function Plates({ history, location }) {
     <Container>
       <Header
         title={location.state && location.state.name ? location.state.name : ''}
-        subTitle={`${plates.length || ''} pratos`}
+        subTitle={`${plates.length || 0} pratos`}
       />
       <Content>
         {plates.map(plate => (
