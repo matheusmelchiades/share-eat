@@ -1,19 +1,10 @@
 import React, { useState } from 'react';
 
-import {
-  Container,
-  Header,
-  Title,
-  FormGroup,
-  FormItem,
-  TitleInput,
-  Input,
-  Description,
-  FormSubmit,
-  TextArea,
-} from './styles';
+import { Container, FormGroup, FormItem, TitleInput, Input, Description, FormSubmit, TextArea } from './styles';
 
-export default function FormPlate() {
+import Header from '../../components/Header';
+
+export default function FormPlate({ history }) {
   const [form, setForm] = useState({
     name: '',
     price: '',
@@ -27,13 +18,12 @@ export default function FormPlate() {
   const handlerSubmit = e => {
     e.preventDefault();
     console.log(form);
+    history.push('/places');
   };
 
   return (
     <Container>
-      <Header>
-        <Title>Silva Lanches</Title>
-      </Header>
+      <Header title="SilvaLanches" />
       <FormGroup onSubmit={handlerSubmit}>
         <FormItem>
           <TitleInput>Nome do prato</TitleInput>

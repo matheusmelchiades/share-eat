@@ -5,7 +5,7 @@ import HeaderTitleSVG from '../../assets/header_title.svg';
 
 export default function Layout(props) {
   return (
-    <Container>
+    <Container id="Layout">
       <Header>
         <HeaderTitle src={HeaderTitleSVG} />
       </Header>

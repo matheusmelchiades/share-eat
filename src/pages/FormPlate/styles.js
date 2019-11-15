@@ -1,37 +1,56 @@
 import styled from 'styled-components';
 
-import * as Layout from '../../components/Layout/styles';
+const MEDIA_PIXEL = 769;
 
 export const Container = styled.div`
   body:not(&) {
     background: #464646;
   }
 
-  ${Layout.Container}:not(&) {
+  #Layout:not(&) {
     background-image: none;
+  }
+
+  @media (min-width: ${MEDIA_PIXEL}px) {
+    padding: 0 31%;
   }
 `;
 
-export const Header = styled.div``;
+export const FormGroup = styled.form`
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
 
-export const Title = styled.h2``;
+  padding: 10px;
+`;
 
-export const FormGroup = styled.form``;
-
-export const FormItem = styled.div``;
+export const FormItem = styled.div`
+  margin-top: 20px;
+  padding-right: 10px;
+  width: 100%;
+`;
 
 export const TitleInput = styled.h4`
   text-align: left;
-  font: Bold 14px/19px Nunito Sans;
-  letter-spacing: 0;
+  font-size: 14px;
+  font-family: Nunito Sans;
+  font-weight: bold;
   color: #ffffffde;
   opacity: 1;
 `;
 
 export const Input = styled.input`
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
   border: 1px solid #dededf;
   border-radius: 4px;
   background: #ffffff 0% 0% no-repeat padding-box;
+
+  min-height: 38px;
 
   input[type='number']::-webkit-inner-spin-button:not(&),
   input[type='number']::-webkit-outer-spin-button:not(&) {
@@ -44,13 +63,18 @@ export const Input = styled.input`
 
 export const Description = styled.p`
   text-align: left;
-  font: Regular 14px/19px Nunito Sans;
+  font-family: Nunito Sans;
+  font-weight: 500;
+  font-size: 14px;
   letter-spacing: 0;
   color: #ffffffde;
   opacity: 1;
 `;
 
 export const TextArea = styled.textarea`
+  width: 100%;
+  margin-top: 5px;
+  padding: 10px;
   border: 1px solid #dededf;
   border-radius: 4px;
   background: #ffffff 0% 0% no-repeat padding-box;
@@ -58,8 +82,12 @@ export const TextArea = styled.textarea`
 `;
 
 export const FormSubmit = styled.button`
+  margin-top: 15%;
+  padding: 10px;
   width: 100%;
-  font: Bold 16px/25px Poppins;
+  font-family: Poppins;
+  font-size: 16px;
+  font-weight: bold;
   letter-spacing: 0;
   color: #121212;
   opacity: 1;
@@ -68,4 +96,8 @@ export const FormSubmit = styled.button`
   border-radius: 4px;
   opacity: 1;
   border: none;
+
+  &:active {
+    transform: translateY(3px);
+  }
 `;
