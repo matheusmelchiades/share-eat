@@ -5,10 +5,12 @@ import { Container, Content, PlaceRow, PlaceTitle, PlatesLength, PlaceCard, Plat
 import Header from '../../components/Header';
 import AddButton from '../../components/Buttons/AddButton';
 import api from '../../services/api';
+import Loader from '../../components/Loader';
 
 export default function Places({ history }) {
   const [placesLength, setPlacesLength] = useState(0);
   const [places, setPlaces] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   async function fetchPlaces() {
     try {
@@ -23,12 +25,15 @@ export default function Places({ history }) {
       if (data) {
         setPlaces(data.rows);
         setPlacesLength(data.count);
+        setLoading(false);
       }
     } catch (err) {}
   }
 
   useEffect(() => {
-    fetchPlaces();
+    setTimeout(() => {
+      fetchPlaces();
+    }, 1200);
   }, []);
 
   const handlerSelectPlace = place => {
@@ -38,8 +43,9 @@ export default function Places({ history }) {
   return (
     <Container>
       <Header title="Lugares" subTitle={`${placesLength} lugares cadastrados`} />
-
       <Content>
+        <Loader loading={loading} style={{ 'margin-top': '10%' }} />
+
         {places.map(place => (
           <PlaceRow key={place.id}>
             <PlaceCard onClick={() => handlerSelectPlace(place)}>

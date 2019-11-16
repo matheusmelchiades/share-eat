@@ -14,9 +14,11 @@ import {
 import Header from '../../components/Header';
 import FloatingButton from '../../components/Buttons/AddFloating';
 import api from '../../services/api.js';
+import Loader from '../../components/Loader/index.js';
 
 export default function Plates({ history, location }) {
   const [plates, setPlates] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   async function fetchPlates(placeId) {
     try {
@@ -24,6 +26,7 @@ export default function Plates({ history, location }) {
 
       if (data) {
         setPlates(data.rows);
+        setLoading(false);
       }
     } catch (err) {}
   }
@@ -33,7 +36,9 @@ export default function Plates({ history, location }) {
     const placeParam = location.state;
 
     if (placeParam && placeParam.id) {
-      fetchPlates(placeParam.id);
+      setTimeout(() => {
+        fetchPlates(placeParam.id);
+      }, 1200);
     } else {
       history.push('places');
     }
@@ -53,6 +58,8 @@ export default function Plates({ history, location }) {
         subTitle={`${plates.length || 0} pratos`}
       />
       <Content>
+        <Loader loading={loading} style={{ 'margin-top': '10%' }} />
+
         {plates.map(plate => (
           <PlateRow key={plate.id}>
             <PlateCard>
