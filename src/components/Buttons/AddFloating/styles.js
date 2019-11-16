@@ -32,7 +32,7 @@ export const Container = styled.div`
 
     top: 12vh;
     left: calc(100% - 33.8%);
-    right: calc(100% - 66%)
+    right: calc(100% - 66%);
 
     &:active {
       transform: translateY(3px);
