@@ -39,6 +39,13 @@ export default function Plates({ history, location }) {
     }
   }, []);
 
+  const formatPrice = value => {
+    return value.toLocaleString('pt-BR', {
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2,
+    });
+  };
+
   return (
     <Container>
       <Header
@@ -51,7 +58,7 @@ export default function Plates({ history, location }) {
             <PlateCard>
               <PlateCardHeader>
                 <PlateName>{plate.name}</PlateName>
-                <PlatePrice>R$ {plate.price}</PlatePrice>
+                <PlatePrice>R$ {formatPrice(plate.price)}</PlatePrice>
               </PlateCardHeader>
               <PlateDescription>{plate.description}</PlateDescription>
             </PlateCard>

@@ -20,7 +20,7 @@ export default function FormPlate({ history, location: { state = {} } }) {
 
   async function fetchNewPlate() {
     try {
-      const response = await api.post('plate', { ...form, placeId: state.id });
+      const response = await api.post('plate', { ...form, price: form.price, placeId: state.id });
 
       if (response.data.id) {
         Notification.success({
@@ -35,6 +35,7 @@ export default function FormPlate({ history, location: { state = {} } }) {
 
   const handlerSubmit = async e => {
     e.preventDefault();
+
     await fetchNewPlate();
   };
 
@@ -56,11 +57,10 @@ export default function FormPlate({ history, location: { state = {} } }) {
           <TitleInput>Valor</TitleInput>
           <Input
             type="number"
-            min="0.00"
-            step="any"
-            required="required"
+            placeholder="R$ 0,00"
             value={form.price}
             onChange={e => handleSetForm(e.target.value, 'price')}
+            required="required"
           />
         </FormItem>
         <FormItem>

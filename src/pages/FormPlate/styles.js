@@ -19,7 +19,7 @@ export const FormGroup = styled.form`
   align-items: flex-start;
 
   padding: 10px;
-  
+
   @media (min-width: ${MEDIA_PIXEL}px) {
     padding: 0 31%;
   }
@@ -50,12 +50,8 @@ export const Input = styled.input`
 
   min-height: 38px;
 
-  input[type='number']::-webkit-inner-spin-button:not(&),
-  input[type='number']::-webkit-outer-spin-button:not(&) {
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    margin: 0;
+  &[type='number'] {
+    width: 20%;
   }
 `;
 
