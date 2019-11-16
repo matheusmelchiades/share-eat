@@ -1,7 +1,9 @@
 import styled from 'styled-components';
 
+const MEDIA_PIXEL = 769;
+
 export const Container = styled.div`
-  position: absolute;
+  position: fixed;
 
   width: 64px;
   height: 64px;
@@ -20,4 +22,19 @@ export const Container = styled.div`
 
   padding: 10px;
   border-radius: 65px;
+
+  @media (min-width: ${MEDIA_PIXEL}px) {
+    position: absolute;
+
+    border-radius: 5px;
+    width: 50px;
+    height: 36px;
+
+    top: 12vh;
+    left: 125vh;
+
+    &:active {
+      transform: translateY(3px);
+    }
+  }
 `;
