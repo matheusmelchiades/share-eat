@@ -4,6 +4,7 @@ import { Container, FormGroup, FormItem, TitleInput, Input, Description, FormSub
 
 import Header from '../../components/Header';
 import api from '../../services/api';
+import * as Notification from '../../components/Notification';
 
 export default function FormPlate({ history, location: { state = {} } }) {
   const [title] = useState(state.name || '');
@@ -22,6 +23,11 @@ export default function FormPlate({ history, location: { state = {} } }) {
       const response = await api.post('plate', { ...form, placeId: state.id });
 
       if (response.data.id) {
+        Notification.success({
+          title: `Plate ${response.data.id}`,
+          message: `${form.name} created with sucess!!!`,
+        });
+
         history.push('/places');
       }
     } catch (err) {}
@@ -29,7 +35,6 @@ export default function FormPlate({ history, location: { state = {} } }) {
 
   const handlerSubmit = async e => {
     e.preventDefault();
-
     await fetchNewPlate();
   };
 

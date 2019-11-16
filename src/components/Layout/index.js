@@ -24,7 +24,7 @@ function Layout({ history, location: { pathname = '' }, children }) {
   const [showButtonBack, setShowButtonBack] = useState(false);
 
   useEffect(() => {
-    setShowButtonBack(MAP_ACTIONS_BY_PATH[pathname].showButtonBack);
+    setShowButtonBack(MAP_ACTIONS_BY_PATH[pathname] ? MAP_ACTIONS_BY_PATH[pathname].showButtonBack : false);
   }, [pathname]);
 
   function handleButtonBack() {
@@ -34,7 +34,10 @@ function Layout({ history, location: { pathname = '' }, children }) {
   }
 
   return (
-    <Container id="Layout" background={MAP_ACTIONS_BY_PATH[pathname].background}>
+    <Container
+      id="Layout"
+      background={MAP_ACTIONS_BY_PATH[pathname] ? MAP_ACTIONS_BY_PATH[pathname].background : false}
+    >
       <Header>
         <ButtonBack onClick={handleButtonBack}>{showButtonBack && <IconBack>keyboard_arrow_left</IconBack>}</ButtonBack>
         <HeaderTitle src={HeaderTitleSVG} />

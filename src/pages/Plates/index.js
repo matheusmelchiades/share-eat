@@ -9,7 +9,6 @@ import {
   PlatePrice,
   PlateDescription,
   PlateCardHeader,
-  HeaderRow,
 } from './styles.js';
 
 import Header from '../../components/Header';
