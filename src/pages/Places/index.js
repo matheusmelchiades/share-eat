@@ -37,14 +37,14 @@ export default function Places({ history }) {
   }, []);
 
   const handlerSelectPlace = place => {
-    history.push('/plates', place);
+    history.push('/shareEat/plates', place);
   };
 
   return (
     <Container>
       <Header title="Lugares" subTitle={`${placesLength} lugares cadastrados`} />
       <Content>
-        <Loader loading={loading} style={{ 'margin-top': '10%' }} />
+        <Loader loading={loading} style={{ marginTop: '10%' }} />
 
         {places.map(place => (
           <PlaceRow key={place.id}>
@@ -57,7 +57,7 @@ export default function Places({ history }) {
               <AddButton
                 icon={{ style: { fill: '#FFFFFF98' } }}
                 onClick={() => {
-                  history.push('forms/plates', place);
+                  history.push('/shareEat/forms/plates', place);
                 }}
               />
             </PlatesButton>

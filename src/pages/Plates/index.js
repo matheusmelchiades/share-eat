@@ -58,7 +58,7 @@ export default function Plates({ history, location }) {
         subTitle={`${plates.length || 0} pratos`}
       />
       <Content>
-        <Loader loading={loading} style={{ 'margin-top': '10%' }} />
+        <Loader loading={loading} style={{ 'marginTop': '10%' }} />
 
         {plates.map(plate => (
           <PlateRow key={plate.id}>
@@ -75,7 +75,7 @@ export default function Plates({ history, location }) {
 
       <FloatingButton
         onClick={() => {
-          history.push('forms/plates', location.state);
+          history.push('/shareEat/forms/plates', location.state);
         }}
       />
     </Container>

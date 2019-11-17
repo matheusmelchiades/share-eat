@@ -21,12 +21,4 @@ export const Container = styled.div`
       transform: rotate(360deg);
     }
   }
-
-  ${({ style }) =>
-    style
-      ? Object.entries(style).reduce((prev, [key, value]) => {
-          prev += `${key}: ${value}`;
-          return prev;
-        }, '')
-      : ''}
 `;
