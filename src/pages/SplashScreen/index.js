@@ -1,17 +1,6 @@
 import React, { useEffect } from 'react';
 
-import { Container } from './styles';
-import Lottie from 'react-lottie';
-import animation from '../../animations/splashScreen.json';
-
-const defaultOptions = {
-  loop: true,
-  autoplay: true,
-  animationData: animation,
-  rendererSettings: {
-    preserveAspectRatio: 'xMidYMid slice',
-  },
-};
+import { Container, Animation } from './styles';
 
 export default function SplashScreen({ history }) {
   useEffect(() => {
@@ -22,7 +11,7 @@ export default function SplashScreen({ history }) {
 
   return (
     <Container>
-      <Lottie options={defaultOptions} height={400} width={400} isStopped={false} isPaused={false} />
+      <Animation />
     </Container>
   );
 }
