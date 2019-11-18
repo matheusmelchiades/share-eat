@@ -53,6 +53,12 @@ export const Input = styled.input`
   &[type='number'] {
     width: 20%;
   }
+
+  @media (max-width: ${MEDIA_PIXEL}px) {
+    &[type='number'] {
+      width: 25%;
+    }
+  }
 `;
 
 export const Description = styled.p`
