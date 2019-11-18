@@ -37,7 +37,7 @@ export default function Places({ history }) {
   }, []);
 
   const handlerSelectPlace = place => {
-    history.push('/shareEat/plates', place);
+    history.push('/share-eat/plates', place);
   };
 
   return (
@@ -57,7 +57,7 @@ export default function Places({ history }) {
               <AddButton
                 icon={{ style: { fill: '#FFFFFF98' } }}
                 onClick={() => {
-                  history.push('/shareEat/forms/plates', place);
+                  history.push('/share-eat/forms/plates', place);
                 }}
               />
             </PlatesButton>

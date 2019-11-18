@@ -10,10 +10,10 @@ export default function() {
   return (
     <Layout>
       <Switch>
-        <Route path="/shareEat/places" component={Places} />
-        <Route path="/shareEat/plates" component={Plates} />
-        <Route path="/shareEat/forms/plates" component={FormPlate} />
-        <Redirect from="*" to="/shareEat/places" />
+        <Route path="/share-eat/places" component={Places} />
+        <Route path="/share-eat/plates" component={Plates} />
+        <Route path="/share-eat/forms/plates" component={FormPlate} />
+        <Redirect from="*" to="/share-eat/places" />
       </Switch>
     </Layout>
   );

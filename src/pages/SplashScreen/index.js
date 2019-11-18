@@ -5,7 +5,7 @@ import { Container, Animation } from './styles';
 export default function SplashScreen({ history }) {
   useEffect(() => {
     setTimeout(() => {
-      history.push('/shareEat');
+      history.push('/share-eat');
     }, 3500);
   }, []);
 

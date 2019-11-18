@@ -75,7 +75,7 @@ export default function Plates({ history, location }) {
 
       <FloatingButton
         onClick={() => {
-          history.push('/shareEat/forms/plates', location.state);
+          history.push('/share-eat/forms/plates', location.state);
         }}
       />
     </Container>

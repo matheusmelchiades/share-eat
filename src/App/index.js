@@ -12,7 +12,7 @@ export default function() {
     <BrowserRouter>
       <Switch>
         <Route path="/" exact component={SplashScreen} />
-        <Route path="/shareEat" component={Routes} />
+        <Route path="/share-eat" component={Routes} />
       </Switch>
       <ReactNotification />
     </BrowserRouter>

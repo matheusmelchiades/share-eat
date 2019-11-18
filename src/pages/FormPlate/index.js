@@ -28,7 +28,7 @@ export default function FormPlate({ history, location: { state = {} } }) {
           message: `${form.name} created with sucess!!!`,
         });
 
-        history.push('/shareEat/places');
+        history.push('/share-eat/places');
       }
     } catch (err) {}
   }

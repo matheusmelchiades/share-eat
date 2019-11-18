@@ -6,15 +6,15 @@ import HeaderTitleSVG from '../../assets/header_title.svg';
 import { withRouter } from 'react-router-dom';
 
 const MAP_ACTIONS_BY_PATH = {
-  '/shareEat/places': {
+  '/share-eat/places': {
     showButtonBack: false,
     background: true,
   },
-  '/shareEat/plates': {
+  '/share-eat/plates': {
     showButtonBack: true,
     background: true,
   },
-  '/shareEat/forms/plates': {
+  '/share-eat/forms/plates': {
     showButtonBack: true,
     background: false,
   },
